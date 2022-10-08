@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data >
+    
+        <!-- Adding new camp in module category  -->
+        <record id="view_extend_category_point_sale" model="ir.ui.view">
+            <field name="name">view.extend.category.point.sale</field>
+            <field name="model">pos.category</field>
+            <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='parent_id']" position="after">
+                    <field name="hora_inicio" widget="float_time"/>
+                    <field name="hora_fin" widget="float_time"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+    
+
+</odoo>
